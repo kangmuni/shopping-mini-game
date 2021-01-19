@@ -1,1 +1,63 @@
+:root {
+  /* color */
+  --color-green: #7cca2d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+body {
+  text-align: center;
+  background-color: var(--color-green);
+}
+
+.logo {
+  padding: 50px;
+  color: black;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn .clothesBtn button {
+  background-color: var(--color-green);
+}
+
+.btn .colorsBtn button {
+  padding: 5px 15px;
+  font-size: 25px;
+  margin: 0 10px;
+}
+
+.btn .colorsBtn .blueBtn {
+  background-color: var(--color-blue);
+}
+
+.btn .colorsBtn .yellowBtn {
+  background-color: var(--color-yellow);
+}
+
+.btn .colorsBtn .pinkBtn {
+  background-color: var(--color-pink);
+}
