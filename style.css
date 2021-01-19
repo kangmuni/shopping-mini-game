@@ -1,7 +1,6 @@
 :root {
   /* color */
-  --color-green: #7cca2d;
-  --color-white: #ffffff;
+  --color-wine: #530d0d;
   --color-blue: #3b88c3;
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
@@ -24,12 +23,12 @@ button {
 
 body {
   text-align: center;
-  background-color: var(--color-green);
+  background-color: var(--color-wine);
 }
 
 .logo {
   padding: 50px;
-  color: black;
+  color: var(--color-light-grey);
   font-size: 70px;
   font-weight: bold;
 }
@@ -60,4 +59,23 @@ body {
 
 .btn .colorsBtn .pinkBtn {
   background-color: var(--color-pink);
+}
+
+.items {
+  padding: 50px 600px;
+  text-align: left;
+}
+
+.items li {
+  outline: dashed 3px var(--color-light-grey);
+  padding: 15px 15px;
+  margin: 15px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.items span {
+  font-size: x-large;
+  margin-left: 15px;
+  color: var(--color-light-grey);
 }
