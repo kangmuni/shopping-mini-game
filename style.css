@@ -38,10 +38,6 @@ body {
   background-color: var(--color-wine);
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 .logo {
   padding: var(--large-space);
   color: var(--color-light-grey);
@@ -61,17 +57,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: var(--large-space);
+  padding-bottom: var(--large-space);
 }
 
 .btn .clothesBtn button {
-  background-color: var(--color-green);
+  background-color: var(--color-wine);
+  padding: 0 var(--base-space);
 }
 
 .btn .colorsBtn button {
   padding: 5px var(--base-space);
   font-size: 24px;
-  margin: 0 5px;
+  margin: 0 15px;
 }
 
 .btn .colorsBtn .blueBtn {
@@ -91,8 +88,12 @@ body {
   height: 60%;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 auto var(--large-space) auto;
   overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .items li {
@@ -103,10 +104,42 @@ body {
   display: flex;
   align-items: center;
   text-align: left;
+  transition: transform var(--animation-duration) ease-in-out;
+}
+
+.items li:hover {
+  transform: scale(1.05);
 }
 
 .items span {
   font-size: x-large;
   margin-left: var(--base-space);
   color: var(--color-light-grey);
+}
+
+@media screen and (max-width: 890px) {
+  .logo {
+    font-size: 55px;
+  }
+
+  .btn {
+    flex-direction: column;
+  }
+
+  .btn .clothesBtn {
+    margin-bottom: calc(var(--base-space) * 2);
+  }
+
+  .btn .clothesBtn {
+    font-size: 10px;
+    padding: 0;
+  }
+
+  .btn .colorsBtn button {
+    font-size: 20px;
+  }
+
+  .items span {
+    font-size: large;
+  }
 }
