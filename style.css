@@ -5,6 +5,13 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
+
+  /* size */
+  --large-space: 50px;
+  --base-space: 15px;
+
+  /* animation */
+  --animation-duration: 400ms;
 }
 
 * {
@@ -13,6 +20,7 @@
 
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 button {
@@ -21,22 +29,39 @@ button {
   outline: none;
 }
 
+button:hover {
+  transform: scale(1.1);
+}
+
 body {
-  text-align: center;
+  height: 100vh;
   background-color: var(--color-wine);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .logo {
-  padding: 50px;
+  padding: var(--large-space);
   color: var(--color-light-grey);
   font-size: 70px;
   font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: transform var(--animation-duration) ease-in-out;
+}
+
+.logo:hover {
+  color: black;
+  transform: scale(1.1);
 }
 
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: var(--large-space);
 }
 
 .btn .clothesBtn button {
@@ -44,9 +69,9 @@ body {
 }
 
 .btn .colorsBtn button {
-  padding: 5px 15px;
-  font-size: 25px;
-  margin: 0 10px;
+  padding: 5px var(--base-space);
+  font-size: 24px;
+  margin: 0 5px;
 }
 
 .btn .colorsBtn .blueBtn {
@@ -62,20 +87,26 @@ body {
 }
 
 .items {
-  padding: 50px 600px;
-  text-align: left;
+  width: 60%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  overflow-y: scroll;
 }
 
 .items li {
   outline: dashed 3px var(--color-light-grey);
-  padding: 15px 15px;
-  margin: 15px 0px;
+  width: 35vw;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
   display: flex;
   align-items: center;
+  text-align: left;
 }
 
 .items span {
   font-size: x-large;
-  margin-left: 15px;
+  margin-left: var(--base-space);
   color: var(--color-light-grey);
 }
