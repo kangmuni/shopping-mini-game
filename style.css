@@ -1,6 +1,6 @@
 :root {
   /* color */
-  --color-wine: #530d0d;
+  --color-wine: #77180f;
   --color-blue: #3b88c3;
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
@@ -97,7 +97,7 @@ body {
 }
 
 .items li {
-  outline: dashed 3px var(--color-light-grey);
+  outline: dashed 3.5px black;
   width: 35vw;
   padding: var(--base-space);
   margin-bottom: var(--base-space);
@@ -108,18 +108,20 @@ body {
 }
 
 .items li:hover {
+  outline-color: var(--color-light-grey);
   transform: scale(1.05);
 }
 
-.items span {
+.items .genderAndSize {
   font-size: x-large;
   margin-left: var(--base-space);
   color: var(--color-light-grey);
+  display: flex;
 }
 
 @media screen and (max-width: 890px) {
   .logo {
-    font-size: 55px;
+    font-size: 53px;
   }
 
   .btn {
@@ -139,7 +141,8 @@ body {
     font-size: 20px;
   }
 
-  .items span {
-    font-size: large;
+  .items .genderAndSize {
+    font-size: 20px;
+    flex-direction: column;
   }
 }

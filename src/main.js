@@ -19,11 +19,15 @@ function createHTMLString(item) {
   return `
         <li class="item">
             <img src="${item.image}" alt="${item.type}" />
-            <span>${item.gender}, ${item.size}</span>
+            <div class="genderAndSize">
+              <span>${item.gender},&nbsp</span> 
+              <span>${item.size}</span>
+            </div>
         </li>
     `;
 }
 
+// Handle button click
 function onButtonClick(event, items) {
   // console.log(event.target.dataset.key);
   // console.log(event.target.dataset.value);
@@ -47,6 +51,16 @@ function onButtonClick(event, items) {
   // size: "L"
   // type: "tshirt" => (item[key] === value) 를 풀어서 보면 => (item[type] === thsirt) 이렇게 됩니다. BAMMM!!!
 }
+
+// Make the items matching {key: value} invisible.
+// function updateItems(items, key, value) {
+//   items.forEach((item) => {
+//     if (item[key] === value) {
+//       item.classList.remove("invisible");
+//     }
+//     item.classList.add("visible");
+//   });
+// }
 
 function setEventListener(items) {
   const logo = document.querySelector(".logo");
