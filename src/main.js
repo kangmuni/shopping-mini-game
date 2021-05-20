@@ -1,17 +1,17 @@
 // Featch the items from the JSON file
 function loadItems() {
-  return fetch("data/data.json") //fetch라는것을 통해서 데이터를 받아 온다.
+  return fetch('data/data.json') //fetch라는것을 통해서 데이터를 받아 온다.
     .then((response) => response.json()) // 받아온 데이터가 성공적이면 response의 body를 json Object로 변환 한다.
     .then((json) => json.items); // 그리고 제이슨 안에 있는 아이템들을 리턴하게 된다.
 }
 
 // Update the list with the given items
 function displayItems(items) {
-  const container = document.querySelector(".items ul");
-  // const html = items.map((item) => createHTMLString(item));
-  // console.log(html); // 뭐가 나오는지 궁금할 땐, 이렇게
+  const container = document.querySelector('.items ul');
+  const html = items.map((item) => createHTMLString(item));
+  console.log(html); // 뭐가 나오는지 궁금할 땐, 이렇게
   // HTML 요소로 각각 아이템을 변환해 줄 것이다. (컨테이너에 innerHTML 업데이트)
-  container.innerHTML = items.map((item) => createHTMLString(item)).join("");
+  container.innerHTML = items.map((item) => createHTMLString(item)).join('');
 }
 
 // Create HTML list item from the given data item
@@ -19,10 +19,7 @@ function createHTMLString(item) {
   return `
         <li class="item">
             <img src="${item.image}" alt="${item.type}" />
-            <div class="genderAndSize">
-              <span>${item.gender},&nbsp</span> 
-              <span>${item.size}</span>
-            </div>
+            <div class="size">${item.size}</div>
         </li>
     `;
 }
@@ -43,31 +40,31 @@ function onButtonClick(event, items) {
   // const filtered = displayItems(items.filter((item) => item[key] === value));
   // console.log(filtered);
   displayItems(items.filter((item) => item[key] === value));
-  // Array(33)
-  // 0:
-  // color: "pink"
-  // gender: "male"
-  // image: "../imgs/pink_t.png"
-  // size: "L"
-  // type: "tshirt" => (item[key] === value) 를 풀어서 보면 => (item[type] === thsirt) 이렇게 됩니다. BAMMM!!!
+  // updateItems(items, key, value);
 }
 
 // Make the items matching {key: value} invisible.
 // function updateItems(items, key, value) {
 //   items.forEach((item) => {
 //     if (item[key] === value) {
-//       item.classList.remove("invisible");
+//       item.classList.remove('invisible');
 //     }
-//     item.classList.add("visible");
+//     item.classList.add('visible');
 //   });
 // }
 
 function setEventListener(items) {
-  const logo = document.querySelector(".logo");
-  const buttons = document.querySelector(".btn"); // 컨테이너 안에 있는 자식들까지 이벤트 위임을 해줄것이기 때문에 이거 하나만 쿼리해줘도 된다.
-  logo.addEventListener("click", () => displayItems(items));
-  buttons.addEventListener("click", (event) => onButtonClick(event, items)); // 이벤트가 발생한 아이(event)를 인자로 전달해주고 items도 전달해준다.
+  const logo = document.querySelector('.logo');
+  const buttons = document.querySelector('.footer'); // 컨테이너 안에 있는 자식들까지 이벤트 위임을 해줄것이기 때문에 이거 하나만 쿼리해줘도 된다.
+  logo.addEventListener('click', () => displayItems(items));
+  buttons.addEventListener('click', (event) => onButtonClick(event, items)); // 이벤트가 발생한 아이(event)를 인자로 전달해주고 items도 전달해준다.
 }
+
+const today = new Date();
+const hours = today.getHours();
+const minutes = today.getMinutes();
+const clock = document.querySelector('.clock');
+clock.innerText = `${hours}:${minutes}`;
 
 // Main
 loadItems()

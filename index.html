@@ -5,53 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
     <script src="src/main.js" defer></script>
   </head>
   <body>
     <!-- Logo -->
-    <header class="logo">Muni's Clothing Store</header>
-    <!-- Buttons -->
-    <div class="btn">
-      <div class="clothesBtn">
-        <button class="tshirt">
+    <div class="container">
+      <header class="header">
+        <div class="top_bar">
+          <div class="clock"></div>
+          <div class="icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-three-quarters"></i>
+          </div>
+        </div>
+        <div class="logo">INVENTORY STATUS</div>
+      </header>
+      <!-- Items -->
+      <div class="items">
+        <ul>
+          <!-- Display List -->
+        </ul>
+      </div>
+      <!-- Buttons -->
+      <footer class="footer">
+        <button class="blue_t">
           <img
-            src="imgs/grey_t.png"
+            src="imgs/blue_t.png"
             alt="tshirt"
-            data-key="type"
-            data-value="tshirt"
+            data-key="color"
+            data-value="blue"
           />
         </button>
-        <button class="pants">
+        <button class="white_t">
           <img
-            src="imgs/grey_p.png"
+            src="imgs/white_t.png"
             alt="pants"
-            data-key="type"
-            data-value="pants"
+            data-key="color"
+            data-value="white"
           />
         </button>
         <button>
           <img
-            class="skirt"
-            src="imgs/grey_s.png"
+            class="yellow_t"
+            src="imgs/yellow_t.png"
             alt="skirt"
-            data-key="type"
-            data-value="skirt"
+            data-key="color"
+            data-value="yellow"
           />
         </button>
-      </div>
-      <div class="colorsBtn">
-        <button class="blueBtn" data-key="color" data-value="blue">Blue</button>
-        <button class="yellowBtn" data-key="color" data-value="yellow">
-          Yellow
+        <button>
+          <img
+            class="black_t"
+            src="imgs/black_t.png"
+            alt="skirt"
+            data-key="color"
+            data-value="black"
+          />
         </button>
-        <button class="pinkBtn" data-key="color" data-value="pink">Pink</button>
-      </div>
-    </div>
-    <!-- Items -->
-    <div class="items">
-      <ul>
-        <!-- Display List -->
-      </ul>
+        <button>
+          <img
+            class="denim_p"
+            src="imgs/denim_p.png"
+            alt="skirt"
+            data-key="type"
+            data-value="pants"
+          />
+        </button>
+      </footer>
     </div>
   </body>
 </html>
