@@ -34,7 +34,7 @@ function onButtonClick(event, items) {
   const key = dataset.key;
   const value = dataset.value;
 
-  if (key === null || value === null) {
+  if (key === undefined || value === undefined) {
     return; // 해당하는게 없다면 빨리 끝내겠다.
   }
   // const filtered = displayItems(items.filter((item) => item[key] === value));
